@@ -15,11 +15,11 @@ class FIFOCache(BaseCaching):
         if key is None or item is None:
             pass
         else:
-            if len(self.cache_data) >= BaseCaching.MAX_Items \
+            if len(self.cache_data) >= BaseCaching.MAX_ITEMS \
                     and key not in self.cache_data.keys():
-                        first_key = next(iter(self.cache_data.keys()))
-                        del self.cache_data[first_key]
-                        print("DISCARD: {}".format(first_key))
+                first_key = next(iter(self.cache_data.keys()))
+                del self.cache_data[first_key]
+                print("DISCARD: {}". format(first_key))
 
             self.cache_data[key] = item
 
